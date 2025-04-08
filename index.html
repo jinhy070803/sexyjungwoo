@@ -13,13 +13,13 @@
     </style>
 </head>
 <body>
-    <p id="message">🔮 오늘의 MLB 경기 결과는? 🔮</p>
+    <p id="message"> 오늘의 epl결과는? </p>
     <button onclick="fetchMLBResults()">눌러서 확인하기</button>
 
     <script>
         async function fetchMLBResults() {
             try {
-                const response = await fetch('https://api.sportsdata.io/v3/mlb/scores/json/GamesByDate/2024-MAR-18?key=YOUR_API_KEY');
+                const response = await fetch('https://www.livesport.com/kr/soccer/england/premier-league/#/lAkHuyP3');
                 const games = await response.json();
                 
                 if (games.length === 0) {
@@ -27,7 +27,7 @@
                     return;
                 }
 
-                let resultText = "오늘의 MLB 경기 결과:\n";
+                let resultText = "오늘의 epl 경기 결과:\n";
                 games.forEach(game => {
                     resultText += `${game.AwayTeam} ${game.AwayTeamRuns} - ${game.HomeTeam} ${game.HomeTeamRuns}\n`;
                 });
